@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot Interface</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #F5F5F5;
+      }
+
+      .chatbot-container {
+        background-color: white;
+        border-radius: 10px;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      .user-message {
+        text-align: right;
+        margin-bottom: 10px;
+      }
+
+      .chatbot-message {
+        text-align: left;
+        margin-bottom: 10px;
+      }
+
+      .chatbot-message p {
+        margin: 0;
+      }
+
+      .chatbot-message h4 {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chatbot-container">
+      <h1>Chatbot</h1>
+      {% if response %}
+        <div class="chatbot-message">
+          <h4>Chatbot</h4>
+          <p>{{ response }}</p>
+        </div>
+      {% endif %}
+      <form method="POST">
+        <div class="user-message">
+          <label for="user_input">You:</label>
+          <input type="text" id="user_input" name="user_input" size="50">
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
